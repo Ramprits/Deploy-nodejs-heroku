@@ -9,6 +9,10 @@ router.post("/signup", (req, res) => {
     .hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        gender: req.body.gender,
+        contact: req.body.contact,
         email: req.body.email,
         password: hash
       });
@@ -59,7 +63,8 @@ router.post("/login", (req, res) => {
         }
       );
       res.status(200).json({
-        token: token
+        token: token,
+        expiresIn: 3600
       });
     })
     .catch(err => {

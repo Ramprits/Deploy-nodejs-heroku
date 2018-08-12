@@ -17,10 +17,9 @@ exports.createPost = function(req, res, next) {
   const url = req.protocol + "://" + req.get("host");
   const post = new Post({
     name: req.body.name,
-    email: req.body.email,
-    body: req.body.body,
+    content: req.body.content,
     image: url + "/images/" + req.file.filename,
-    createdDate: req.body.createdDate
+    created: req.body.createdDate
   });
   console.log(post);
   post
