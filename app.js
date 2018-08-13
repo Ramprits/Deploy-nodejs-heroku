@@ -7,7 +7,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
 // sudo sysctl fs.inotify.max_user_watches=582222 && sudo sysctl -p
-// ZVUogNrFQwpTZ9no
 
 const app = express();
 app.use(bodyParser.json());

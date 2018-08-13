@@ -7,7 +7,8 @@ const postSchema = mongoose.Schema({
   },
   content: String,
   image: String,
-  created: { type: Date, default: Date.now }
+  created: { type: Date, default: Date.now },
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: "users", require: true }
 });
 
 module.exports = mongoose.model("post", postSchema);

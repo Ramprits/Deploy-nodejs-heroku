@@ -19,9 +19,9 @@ exports.createPost = function(req, res, next) {
     name: req.body.name,
     content: req.body.content,
     image: url + "/images/" + req.file.filename,
-    created: req.body.createdDate
+    created: req.body.created,
+    creator: req.userData.userId
   });
-  console.log(post);
   post
     .save()
     .then(data => {

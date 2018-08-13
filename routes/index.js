@@ -26,17 +26,6 @@ router.post("/", function(req, res, next) {
     email: req.body.email
   });
 
-  // mongo.connect(
-  //   url,
-  //   function(err, db) {
-  //     assert.equal(null, err);
-  //     db.collection("employees").insertOne(employee, function() {
-  //       assert.equal(null, error);
-  //       console.log("Item inserted ");
-  //       db.close();
-  //     });
-  //   }
-  // );
   employee
     .save()
     .then(data => {
